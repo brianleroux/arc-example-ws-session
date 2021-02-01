@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@architect/functions": "^3.13.9",
+    "arc-macro-dns": "^1.0.0"
+  }
+}
