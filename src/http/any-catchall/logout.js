@@ -13,7 +13,7 @@ module.exports = function logout (state) {
 
 <main></main>
 <input type=text id=message>
-<script>window.WSURL = "${ process.env.ARC_WSS_URL }"</script>
+<script>window.WSURL = "${ process.env.WSURL || 'ws://localhost:3333' }"</script>
 <script type=module src=${ arc.static('/index.js') }></script>
 </body>
 </html>`

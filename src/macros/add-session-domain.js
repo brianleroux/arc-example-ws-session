@@ -5,7 +5,7 @@ module.exports = async function addDomain(arc, cfn, stage='staging') {
     if (resource.Type === 'AWS::Serverless::Function') {
       let staging = 'wss://ws-qa.arc-session.com'
       let production = 'wss://ws.arc-session.com'
-      resource.Properties.Environment.Variables.ARC_WSS_URL = stage === 'staging'? staging : production
+      resource.Properties.Environment.Variables.WSURL = stage === 'staging'? staging : production
       resource.Properties.Environment.Variables.SESSION_DOMAIN = 'arc-session.com'
     }
   }

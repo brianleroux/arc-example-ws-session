@@ -14,7 +14,8 @@ async function handler (req) {
   await data.set({ 
     table: 'connections', 
     key: req.requestContext.connectionId,
-    account: req.session.account
+    account: req.session.account,
+    ttl: 60*60 // 1 hour in seconds
   })
 
   return {statusCode: 200}
