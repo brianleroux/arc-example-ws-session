@@ -32,3 +32,9 @@ http
 ws
   staging ws-qa.arc-session.com
   production ws.arc-session.com
+
+@tables
+data
+  scopeID *String
+  dataID **String
+  ttl TTL

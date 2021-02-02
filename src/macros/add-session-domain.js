@@ -1,3 +1,4 @@
+// TODO add to the domains macro
 module.exports = async function addDomain(arc, cfn, stage='staging') {
   for (let r of Object.keys(cfn.Resources)) {
     let resource = cfn.Resources[r]

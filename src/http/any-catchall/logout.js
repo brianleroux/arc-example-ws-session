@@ -9,11 +9,10 @@ module.exports = function logout (state) {
   <title>Architect</title>
 </head>
 <body>
-please logout <form action=/logout method=POST><button>sign out</button></form>
-<hr>
-<pre>
-${ JSON.stringify(state, null, 2) }
-</pre>
+<form action=/logout method=POST><button>sign out ${ state.account }</button></form>
+
+<main></main>
+<input type=text id=message>
 <script>window.WSURL = "${ process.env.ARC_WSS_URL }"</script>
 <script type=module src=${ arc.static('/index.js') }></script>
 </body>

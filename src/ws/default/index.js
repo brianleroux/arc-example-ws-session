@@ -1,5 +1,25 @@
-// learn more about WebSocket functions here: https://arc.codes/primitives/ws
-exports.handler = async function ws (req) {
-  console.log(JSON.stringify(req, null, 2))
-  return {statusCode: 200}
+let arc = require('@architect/functions')
+let data = require('@begin/data')
+
+exports.handler = async function connected(event) {
+
+  console.log('got event', event)
+
+  let table = 'connections'
+  let key = event.requestContext.connectionId
+  let sender = await data.get({ table, key })
+  let payload = JSON.parse(event.body) 
+
+  // send to all connections
+  let pages = data.page({table:'connections', limit:25})
+  for await (let page of pages) {
+    for (let conn of page) {
+      await arc.ws.send({ 
+        id: conn.key, 
+        payload: {account: sender.account, text: payload.text}
+      }) 
+    }
+  } 
+
+  return { statusCode: 200 }
 }
