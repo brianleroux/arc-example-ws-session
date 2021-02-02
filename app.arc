@@ -20,6 +20,8 @@ fingerprint true
 # no further config 
 
 @http
+post /login
+any /logout
 any /*
 
 @dns

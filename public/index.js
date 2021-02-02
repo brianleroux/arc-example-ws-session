@@ -17,6 +17,7 @@ function open() {
 
 // report a closed WebSocket connection
 function close() {
+  msg.style.display = 'none'
   main.innerHTML = 'Closed <a href=/>reload</a>'
 }
 
@@ -34,4 +35,3 @@ msg.addEventListener('keyup', function(e) {
     ws.send(JSON.stringify({text}))
   }
 })
-

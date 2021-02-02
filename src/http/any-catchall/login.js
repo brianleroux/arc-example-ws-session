@@ -7,7 +7,7 @@ module.exports = function login () {
   <title>Architect</title>
 </head>
 <body>
-please login <form method=post action=/><input type=text name=name required placeholder="enter username"><button>sign in</button>
+please login <form method=post action=/login><input type=text name=name required placeholder="enter username"><button>sign in</button>
 </body>
 </html>`
 }

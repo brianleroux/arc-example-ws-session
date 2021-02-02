@@ -1,6 +1,11 @@
 {
+  "scripts": {
+    "start" : "sandbox",
+    "deploy": "deploy"
+  },
   "dependencies": {
     "@architect/functions": "^3.13.9",
+    "@architect/sandbox": "^3.3.6",
     "@begin/data": "^1.2.3",
     "arc-macro-dns": "^1.0.0"
   }

@@ -15,7 +15,7 @@ async function handler (req) {
     table: 'connections', 
     key: req.requestContext.connectionId,
     account: req.session.account,
-    ttl: 60*60 // 1 hour in seconds
+    ttl: 60 * 60 // 1 hour in seconds
   })
 
   return { statusCode: 200 }
