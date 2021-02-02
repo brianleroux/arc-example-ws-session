@@ -1,8 +1,9 @@
 let arc = require('@architect/functions')
 let data = require('@begin/data')
 
-exports.handler = async function connected(event) {
+exports.handler = async function message (event) {
 
+  // get the sender and their message
   let table = 'connections'
   let key = event.requestContext.connectionId
   let sender = await data.get({ table, key })

@@ -1,6 +1,7 @@
 let arc = require('@architect/functions')
 let data = require('@begin/data')
 
+// clean up bad connections
 exports.handler = async function disconnected (event) {
   try {
     let table = 'connections'

@@ -1,7 +1,6 @@
 {
   "scripts": {
-    "start" : "sandbox",
-    "deploy": "deploy"
+    "start": "sandbox"
   },
   "dependencies": {
     "@architect/functions": "^3.13.9",
