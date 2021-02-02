@@ -1,5 +1,14 @@
-// learn more about WebSocket functions here: https://arc.codes/primitives/ws
-exports.handler = async function ws (req) {
-  console.log(JSON.stringify(req, null, 2))
-  return {statusCode: 200}
+let arc = require('@architect/functions')
+let data = require('@begin/data')
+
+exports.handler = async function disconnected (event) {
+  try {
+    let table = 'connections'
+    let key = event.requestContext.connectionId
+    await data.destroy({ table, key })
+  }
+  catch (e) {
+    console.error('swallowing', e)
+  }
+  return { statusCode: 200 }
 }

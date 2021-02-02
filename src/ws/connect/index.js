@@ -10,7 +10,7 @@ async function handler (req) {
   if (!req.session.account)
     throw Error('invalid session')
 
-  // save the connection if its a good session
+  // save the connection if its a good session; scale to zero
   await data.set({ 
     table: 'connections', 
     key: req.requestContext.connectionId,
@@ -18,5 +18,5 @@ async function handler (req) {
     ttl: 60*60 // 1 hour in seconds
   })
 
-  return {statusCode: 200}
+  return { statusCode: 200 }
 }
