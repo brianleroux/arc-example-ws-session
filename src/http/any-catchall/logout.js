@@ -12,7 +12,7 @@ module.exports = function logout (state) {
 <form action=/logout method=POST><button>sign out ${ state.account }</button></form>
 
 <main></main>
-<input type=text id=message>
+<input type=text id=message autofocus placeholder="chat text here">
 <script>window.WSURL = "${ process.env.WSURL || 'ws://localhost:3333' }"</script>
 <script type=module src=${ arc.static('/index.js') }></script>
 </body>
